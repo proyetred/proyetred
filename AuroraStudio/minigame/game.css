@@ -1,0 +1,171 @@
+.game-modal-content {
+    background: #0a0a1a;
+    border: 1px solid #0d2c4a;
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+    color: #fff;
+    max-width: 1138px; /* Updated from 600px */
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Needed for positioning close button */
+}
+
+#start-menu, #game-over-menu, #game-won-menu {
+    text-align: center;
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    margin-bottom: 15px;
+}
+
+.ship-select-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.ship-selection-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.ship-option {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.ship-option:hover {
+    border-color: #00bfff;
+    transform: scale(1.1);
+}
+
+.ship-option.selected {
+    border-color: #00bfff;
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.play-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    background-color: #0d2c4a;
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    padding: 8px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.play-btn:hover {
+    background-color: #00bfff;
+    color: #0a0a1a;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+}
+
+#gameCanvas {
+    background-color: #000;
+    border: 1px solid #0d2c4a;
+    width: 100%; /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.game-close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 10px #00bfff;
+    z-index: 10;
+}
+
+/* Mobile Controls */
+.mobile-controls-container {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.d-pad-container {
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    gap: 10px;
+}
+
+.d-pad-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 191, 255, 0.3);
+    border: 1px solid #00bfff;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+#up-btn { grid-area: up; }
+#down-btn { grid-area: down; }
+#left-btn { grid-area: left; }
+#right-btn { grid-area: right; }
+
+.shoot-button-container {
+    width: 80px;
+    height: 80px;
+}
+
+.control-btn {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.4);
+    border: 1px solid #ff0000;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.control-btn:active, .d-pad-btn:active {
+    background: rgba(0, 191, 255, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .game-modal-content {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .mobile-controls-container {
+        display: flex; /* Show controls on mobile */
+    }
+
+    .game-title { font-size: 1.5rem; }
+    .ship-option { width: 50px; height: 50px; }
+    .play-btn { padding: 10px 20px; }
+}

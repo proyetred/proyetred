@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 · PRØYET_RED — Te has perdido en el espacio</title>
+  <link rel="icon" href="Image/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="robots" content="noindex">
+  <style>
+    :root{--accent:#9370DB;--bg:#0D0D0D;--text:#EDEDED}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Poppins, sans-serif}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:36px}
+    .card{max-width:980px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(8px);padding:34px;border-radius:14px;box-shadow:0 24px 80px rgba(0,0,0,0.6)}
+    @media(max-width:880px){.card{grid-template-columns:1fr; text-align:center}}
+    .left h1{font-family:'Orbitron',sans-serif;font-size:3.2rem;margin:0 0 8px;color:var(--text)}
+    .left p{color:rgba(230,230,230,0.85);margin:0 0 18px;line-height:1.5}
+    .search-row{display:flex;gap:12px;align-items:center}
+    .search-input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(13,13,13,0.85);color:var(--text);font-size:1rem}
+    .search-btn{padding:12px 16px;border-radius:10px;background:linear-gradient(45deg,var(--accent),#8058b8);color:white;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+    .results{margin-top:18px;display:grid;gap:10px}
+    .result{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column}
+    .result a{color:var(--text);text-decoration:none;font-weight:700}
+    .result .excerpt{color:rgba(230,230,230,0.75);font-size:0.95rem;margin-top:6px}
+    .no-results{color:rgba(255,120,120,0.9);font-weight:700}
+    .astro{display:flex;align-items:center;justify-content:center}
+    .astro svg{width:320px;height:auto;filter:drop-shadow(0 12px 28px rgba(0,0,0,0.6))}
+    small.hint{display:block;margin-top:12px;color:rgba(230,230,230,0.65)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" role="main" aria-labelledby="title-404">
+      <div class="left">
+        <h1 id="title-404">404 — Te has perdido en el espacio</h1>
+        <p>El enlace no existe o se movió. Busca en nuestro sitio: encontrarás páginas, servicios y proyectos relevantes.</p>
+
+        <div class="search-row" role="search">
+          <input id="site-search" class="search-input" placeholder="Buscar: servicios, proyectos, equipo..." aria-label="Buscar en el sitio">
+          <button id="search-clear" class="search-btn" title="Limpiar">Limpiar</button>
+        </div>
+        <small class="hint">Resultados instantáneos. Usa flechas arriba/abajo y Enter para abrir.</small>
+
+        <div class="results" id="search-results" aria-live="polite"></div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;justify-content:flex-start;">
+          <a href="index.html" class="search-btn">Volver al inicio</a>
+          <a href="404-search.html" class="search-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)">Contacto</a>
+        </div>
+      </div>
+
+      <div class="astro" aria-hidden="true">
+        <!-- Reuse a compact SVG -->
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de cohete">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#00FFF9"/>
+              <stop offset="1" stop-color="#8058b8"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40,20)">
+            <ellipse cx="200" cy="344" rx="130" ry="24" fill="rgba(0,0,0,0.45)"/>
+            <g transform="translate(120,20)">
+              <path d="M64 0c-8 24-36 64-64 88v48c0 40 48 72 64 72s64-32 64-72v-48C120 64 80 24 64 0z" fill="url(#g1)"/>
+              <circle cx="64" cy="56" r="12" fill="#fff" opacity="0.9"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      // Intentamos cargar `site-index.json` generado automáticamente.
+      let SITE_INDEX = [];
+      const input = document.getElementById('site-search');
+      const results = document.getElementById('search-results');
+      const clearBtn = document.getElementById('search-clear');
+
+      fetch('site-index.json').then(r => r.json()).then(json => { SITE_INDEX = Array.isArray(json) ? json : []; search(''); }).catch(()=>{
+        // fallback: suggestions hardcoded
+        SITE_INDEX = [
+          {title: 'Inicio', href: 'index.html', excerpt: 'Estrategia y diseño creativo para productos tecnológicos.'},
+          {title: 'Servicios - Branding, UI/UX, Marketing', href: 'servicios.html', excerpt: 'Branding, Diseño Web, Marketing y Soporte.'},
+          {title: 'Portafolio', href: 'Portafolios/portafolio.html', excerpt: 'Proyectos, diseños y casos de éxito.'},
+          {title: 'Equipo', href: 'equipo.html', excerpt: 'Conoce a nuestros fundadores y diseñadores.'},
+          {title: 'Políticas y Privacidad', href: 'politicas.html', excerpt: 'Políticas de privacidad y uso del sitio.'},
+          {title: 'Contacto', href: '404-search.html', excerpt: 'Envíanos tu proyecto y presupuesto.'}
+        ];
+        search('');
+      });
+
+      function renderItems(items){
+        results.innerHTML = '';
+        if(!items.length){
+          const el = document.createElement('div'); el.className = 'no-results'; el.textContent = 'No se encontraron coincidencias.'; results.appendChild(el); return;
+        }
+        items.forEach(item => {
+          const r = document.createElement('div'); r.className = 'result';
+          r.innerHTML = `<a href="${item.href}">${item.title}</a><div class="excerpt">${item.excerpt}</div>`;
+          results.appendChild(r);
+        });
+      }
+
+      function normalize(s){ return (s||'').toLowerCase(); }
+
+      function search(q){
+        const nq = normalize(q);
+        if(!nq) { renderItems(SITE_INDEX.slice(0,6)); return; }
+        const filtered = SITE_INDEX.filter(p => normalize(p.title).includes(nq) || normalize(p.excerpt).includes(nq) || normalize(p.href).includes(nq));
+        renderItems(filtered);
+      }
+
+      input.addEventListener('input', (e)=> search(e.target.value));
+      clearBtn.addEventListener('click', ()=>{ input.value=''; input.focus(); search(''); });
+
+      // keyboard navigation (simple)
+      let focused = -1;
+      input.addEventListener('keydown', (e)=>{
+        const items = results.querySelectorAll('.result');
+        if(e.key === 'ArrowDown'){ focused = Math.min(focused+1, items.length-1); items[focused]?.querySelector('a')?.focus(); e.preventDefault(); }
+        else if(e.key === 'ArrowUp'){ focused = Math.max(focused-1, 0); items[focused]?.querySelector('a')?.focus(); e.preventDefault(); }
+        else if(e.key === 'Enter'){ if(items[0]) items[0].querySelector('a')?.click(); }
+      });
+
+      // Inicializar con sugerencias
+      document.addEventListener('DOMContentLoaded', ()=>{ search(''); input.focus(); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "proyet_red-site",
+  "version": "1.0.0",
+  "description": "Sitio estático PRØYET_RED - build scripts para minificación",
+  "author": "PRØYET_RED",
+  "license": "MIT",
+  "scripts": {
+    "minify": "terser script.js -c -m -o script.min.js && cleancss -o styles.min.css styles.css",
+    "build": "npm run minify",
+    "generate-index": "node tools/generate_site_index.js"
+  },
+  "devDependencies": {
+    "terser": "^5.17.0",
+    "clean-css-cli": "^5.4.2"
+  }
+}
