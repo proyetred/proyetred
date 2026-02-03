@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#bdb0d8" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="contrast">
+      <feComponentTransfer>
+        <feFuncR type="gamma" amplitude="1" exponent="0.9"/>
+        <feFuncG type="gamma" amplitude="1" exponent="0.9"/>
+        <feFuncB type="gamma" amplitude="1" exponent="0.9"/>
+      </feComponentTransfer>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#0c0e14"/>
+  <g transform="translate(600,400) scale(1)">
+    <!-- subtle purple tint backdrop -->
+    <circle r="520" fill="rgba(147,112,219,0.10)" />
+    <!-- high-contrast monochrome portrait (stylized) -->
+    <g transform="translate(-0,-20) scale(0.9)" filter="url(#contrast)">
+      <ellipse cx="0" cy="120" rx="240" ry="200" fill="#111214"/>
+      <path d="M-180 30 C -220 -40 -100 -200 0 -200 C 100 -200 220 -40 180 30 C 120 110 -120 110 -180 30 Z" fill="#e9e9e9" opacity="0.95"/>
+      <path d="M-70 10 q30 -60 70 -60 q40 0 70 60 q-50 40 -70 40 q-20 0 -70 -40z" fill="#111214" opacity="0.98"/>
+      <rect x="-86" y="40" width="40" height="18" rx="4" fill="#111" opacity="0.9"/>
+      <rect x="46" y="40" width="40" height="18" rx="4" fill="#111" opacity="0.9"/>
+      <path d="M -40 110 q40 30 80 0" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- subtle frame vignette -->
+  <rect x="0" y="0" width="1200" height="800" fill="url(#g)" opacity="0.06" />
+</svg>

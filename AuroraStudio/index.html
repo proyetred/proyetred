@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data:; connect-src 'self' http://127.0.0.1:5500 ws:; img-src 'self' data:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="policies-version" content="2026-01-16">
+    <title>PRØYET_RED - Desarrollo de software</title>
+    <link rel="icon" href="Image/logo.webp" type="image/webp">
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="minigame/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#home" class="logo">
+                    <img src="Image/logo.webp" alt="PRØYET_RED">
+                    <span class="logo-text"><span class="logo-cyan">PRØYET_</span><span class="logo-red">RED</span></span>
+                </a>
+                <input type="checkbox" id="menu-toggle" hidden>
+                <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">&#9776;</label>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="equipo.html">Portafolio</a></li>
+                    <li><a href="404-search.html" class="nav-404">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <section class="hero" id="home">
+        <div class="container hero-text">
+            <h2 class="reveal fade-in-up">PRØYET_RED — Estrategia y diseño creativo para productos tecnológicos con impacto</h2>
+            <p class="reveal fade-in-up">Creamos la identidad digital que tu empresa necesita para destacar y convertir usuarios en clientes.</p>
+            <div class="hero-ctas reveal fade-in-up">
+                <a href="#portfolio" class="btn">Ver Trabajo</a>
+                <a href="404-search.html" class="btn btn-outline">Presupuestar proyecto</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="reveal fade-in-left">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card service-branding reveal fade-in-up">
+                    <h3>Branding</h3>
+                    <p>Creamos identidades de marca memorables que conectan con tu audiencia</p>
+                </div>
+                <div class="service-card reveal fade-in-up">
+                    <h3>Diseño Web UI/UX</h3>
+                    <p>Diseñamos interfaces intuitivas y atractivas para experiencias de usuario excepcionales</p>
+                </div>
+                <div class="service-card service-marketing reveal fade-in-up">
+                    <h3>Marketing</h3>
+                    <p>Material gráfico para redes sociales, campañas y más, optimizado para la conversión</p>
+                </div>
+                <div class="service-card reveal fade-in-up">
+                    <h3>Soporte</h3>
+                    <p>Aseguramos que tu sitio web funcione sin problemas con actualizaciones, seguridad y soporte continuo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="collaboration" class="collaboration-section">
+            <div class="container">
+                <div class="collaboration-content">
+                    <div class="collaboration-image">
+                        <img src="Image/Modelo.png" alt="Modelo Chiru-san" loading="lazy">
+                    </div>
+                    <div class="collaboration-text-container">
+                        <h2 class="collaboration-text">PRØYET_RED X <span class="chiru-san">Chiru-san</span></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="reveal fade-in-left">Vitrina</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item reveal zoom-in" data-title="Branding para Marca de Café" data-description="Desarrollo de identidad visual completa, incluyendo logotipo, paleta de colores y packaging, para una nueva marca de café artesanal.">
+                        <img src="Image/portafolio-1.jpg" alt="Proyecto de diseño 1" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Web De Gestión Y Ventas</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal zoom-in" style="transition-delay: 0.2s;" data-title="Diseño de App Móvil" data-description="Diseño de interfaz (UI) y experiencia de usuario (UX) para una aplicación de fitness, enfocada en la simplicidad y la motivación.">
+                        <img src="Image/portafolio-2.jpg" alt="Proyecto de diseño 2" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Web De Turismo</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal zoom-in" style="transition-delay: 0.4s;" data-title="Campaña en Redes Sociales" data-description="Creación de contenido visual y estrategia para una campaña de lanzamiento de producto en Instagram y Facebook.">
+                        <img src="Image/portafolio-6.jpg" alt="Proyecto de diseño 3" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Desarrollo De Videojuego</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal zoom-in" style="transition-delay: 0.6s;" data-title="Ilustración Editorial" data-description="Serie de ilustraciones personalizadas para un artículo de revista digital sobre tecnología y futuro.">
+                        <img src="Image/Nova.jpg" alt="Proyecto de diseño 4" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Ilustración Editorial</h3>
+                        </div>
+                    </div>
+                </div>
+                <p class="portfolio-note reveal fade-in-up">Algunos De Los Proyectos Realizados Y Proyectos En Producción.</p>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2 class="reveal fade-in-left">Testimonios y Cifras</h2>
+                <div class="testimonials-grid reveal fade-in-up">
+                    <div class="stats-list">
+                        <div class="stat-card">
+                            <div class="stat-ghost">000</div>
+                            <div class="stat-number" data-target="1200" data-pad="3">000</div>
+                            <div class="stat-label">Horas trabajadas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-ghost">10+</div>
+                            <div class="stat-number" data-target="10" data-prefix="+">0</div>
+                            <div class="stat-label">Proyectos entregados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-ghost">3</div>
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Países alcanzados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-ghost">100%</div>
+                            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                            <div class="stat-label">Satisfacción</div>
+                        </div>
+                    </div>
+
+                    <aside class="microtestimonials">
+                        <div class="microtestimonials-grid">
+                            <div class="microtestimonial">
+                                <p class="quote">"Rápido, estratégico y con diseño que convirtió nuestras visitas en clientes."</p>
+                                <div class="who">María R., Fundadora · AgroTech</div>
+                            </div>
+                            <div class="microtestimonial">
+                                <p class="quote">"Nos ayudaron a clarificar producto y la UX aumentó la retención."</p>
+                                <div class="who">Carlos B., CTO · FinStart</div>
+                            </div>
+                            <div class="microtestimonial">
+                                <p class="quote">"Equipo proactivo: entregaron resultados y métricas reales en semanas."</p>
+                                <div class="who">Elena G., PM · SaaS Co.</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <p class="testimonials-note reveal fade-in-up">¿Quieres ver casos de éxito completos? <a href="404-search.html">Contáctanos</a> y te compartimos ejemplos relevantes para tu sector.</p>
+                <!-- Comentarios: ejemplos ficticios + formulario para dejar comentarios -->
+                <div class="comments-section reveal fade-in-up" id="comments-section">
+                    <h3>Comentarios de clientes</h3>
+                    <div class="comments-list" id="comments-list">
+                        <div class="comment">
+                            <div class="c-avatar"><img src="Image/portafolio-1.jpg" alt="avatar"></div>
+                            <div class="c-body">
+                                <div class="c-meta"><strong>Ana P.</strong> · <span class="c-date">Jul 2025</span></div>
+                                <div class="c-text">"Excelente trabajo: la nueva web dobló nuestras consultas en dos meses."</div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="c-avatar"><img src="Image/portafolio-2.jpg" alt="avatar"></div>
+                            <div class="c-body">
+                                <div class="c-meta"><strong>Lucas M.</strong> · <span class="c-date">Nov 2024</span></div>
+                                <div class="c-text">"Profesionales y estratégicos. Entregaron antes de tiempo y con resultados."</div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="c-avatar"><img src="Image/portafolio-6.jpg" alt="avatar"></div>
+                            <div class="c-body">
+                                <div class="c-meta"><strong>Verónica R.</strong> · <span class="c-date">Mar 2025</span></div>
+                                <div class="c-text">"Nos guiaron en el producto y hoy tenemos métricas que hablan por sí solas."</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="comment-form" class="comment-form" method="POST" action="https://getform.io/f/ayvewpjb">
+                        <h4>Deja tu comentario</h4>
+                        <div class="form-row">
+                            <input type="text" name="name" id="comment-name" placeholder="Tu nombre" required>
+                        </div>
+                        <textarea name="comment" id="comment-text" placeholder="Escribe tu comentario..." required></textarea>
+                        <input type="hidden" name="_subject" value="Nuevo comentario desde el sitio">
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Enviar comentario</button>
+                            <span id="comment-status" aria-live="polite"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="reveal fade-in-left">Sobre PRØYET_RED</h2>
+                <p class="reveal fade-in-up">En PRØYET_RED fusionamos estrategia, arte e innovación para convertir ideas en productos y experiencias digitales con impacto real. Colaboramos con emprendedores y empresas tecnológicas para identificar oportunidades, diseñar soluciones centradas en el usuario y ejecutar con rigor técnico y sensibilidad creativa. Investigación, prototipado y métricas guían nuestro proceso; el resultado son diseños que emocionan, resuelven y escalan.</p>
+                <div class="founders reveal fade-in-up">
+                    <h4>Nuestros Fundadores</h4>
+                    <p>David Martinez &bull; Alexander Blanco &bull; Angel Padilla</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="reveal fade-in-left">Hablanos de tu Proyecto</h2>
+                <p class="contact-subtitle reveal fade-in-up">¿Listo para empezar? Envíanos un mensaje.</p>
+                <form id="contact-form-main" action="https://getform.io/f/ayvewpjb" method="POST" enctype="multipart/form-data" class="contact-form reveal fade-in-up">
+                    <input type="text" name="name" placeholder="Tu Nombre" autocomplete="name" required>
+                    <input type="email" name="email" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+
+                    <!-- Selector de servicio -->
+                    <label for="service-select" class="sr-only">¿Qué servicio necesitas?</label>
+                    <select name="service" id="service-select" class="service-select" required>
+                        <option value="">¿Qué servicio necesitas?</option>
+                        <option value="Branding">Branding</option>
+                        <option value="Diseño Web UI/UX">Diseño Web UI/UX</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Soporte">Soporte / Mantenimiento</option>
+                        <option value="Desarrollo Backend">Desarrollo Backend</option>
+                        <option value="Integración API">Integración API</option>
+                        <option value="E-commerce">E-commerce / Tienda online</option>
+                        <option value="Aplicaciones móviles">Aplicaciones móviles</option>
+                        <option value="Product Design (MVP)">Product Design (MVP)</option>
+                        <option value="Consultoría UX">Consultoría UX</option>
+                        <option value="SEO & CRO">SEO & CRO</option>
+                        <option value="Animación y Motion">Animación y Motion</option>
+                        <option value="Auditoría de producto">Auditoría de producto</option>
+                        <option value="Investigación & Estrategia">Investigación & Estrategia</option>
+                        <option value="Otro">Otro (describir en el mensaje)</option>
+                    </select>
+
+                    <textarea name="message" placeholder="Cuéntanos sobre tu idea..." autocomplete="off" required></textarea>
+                    <input type="hidden" name="_next" value="thanks.html">
+                    <input type="hidden" name="_subject" value="Nuevo Mensaje desde tu Portafolio!">
+
+                    <div class="form-actions" style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                        <div id="contact-status" class="contact-status" aria-live="polite" hidden></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="credits" class="about-section">
+            <div class="container">
+                <h2 class="reveal fade-in-left">Créditos</h2>
+                <p class="reveal fade-in-up">Queremos agradecer a <a href="https://www.youtube.com/@chiru-san" target="_blank" class="credits-link">Chiru-San</a> <a href="https://www.instagram.com/chirusanofficial" target="_blank" class="credits-link">@chirusanofficial</a> por su increíble colaboración, proporcionando la música que da vida a nuestros proyectos.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-left">
+                <p>&copy; 2025 PRØYET_RED. Todos los derechos reservados.</p>
+                <div class="footer-contact">
+                    <a href="tel:+584122791704">+58 412 279 1704</a>
+                    <span>•</span>
+                    <a href="mailto:nerael.m@gmail.com">nerael.m@gmail.com</a>
+                </div>
+                <div class="footer-meta">Sedes: Maracaibo (Venezuela) · Bogotá (Colombia) · Horario: Lun-Vie 09:00-18:00 · Respuesta: 24-48h</div>
+                <div class="footer-links"><a href="politicas.html">Políticas y Privacidad</a></div>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><img src="Image/Instagram.png" alt="Instagram"></a>
+                <a href="https://x.com/PRØYET_RED" target="_blank" aria-label="X"><img src="Image/X.png" alt="X"></a>
+                <a href="#" target="_blank" aria-label="Tiktok" class="tiktok-icon"><img src="Image/Tiktok.png" alt="Tiktok"></a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Policies modal (appears on first visit) -->
+    <div id="policy-modal" class="policy-modal" hidden>
+        <div class="policy-modal-content">
+            <div class="policy-panel">
+                <h3>Resumen de Políticas y Privacidad</h3>
+                <p>recopilamos lo estrictamente necesario para contactarte y mejorar el servicio. No vendemos tus datos.</p>
+
+                <div class="policy-full" role="region" aria-label="Texto completo de políticas">
+                    <h4>🔒 Privacidad</h4>
+                    <p>Solo guardamos nombre y correo para contacto; datos técnicos mínimos para seguridad y diagnóstico.</p>
+                    <p>PRØYET_RED no se hace responsable del uso indebido, malicioso o no autorizado que terceros o usuarios puedan dar a los productos, servicios o materiales; la responsabilidad de un uso correcto recae en el usuario.</p>
+
+                    <h4>📜 Uso</h4>
+                    <p>El sitio informa sobre los servicios, los trabajos a medida que se rigen por contrato.</p>
+
+                    <h4>🍪 Cookies</h4>
+                    <p>Cookies técnicas necesarias para el funcionamiento del sitio, puedes desactivarlas en el navegador.</p>
+
+                    <h4>☎️ Soporte</h4>
+                    <p>Contacto: <a href="https://wa.me/584122791704">WhatsApp</a> · <a href="mailto:nerael.m@gmail.com">Email</a> — respuesta 24-48h.</p>
+
+                    <h4>🔁 Cambios</h4>
+                    <p>Actualizamos estas políticas; revisa la versión en la página de políticas.</p>
+                </div>
+
+                <p style="margin-top:10px"><a href="politicas.html">Leer políticas completas</a></p>
+                <div class="policy-actions">
+                    <button id="accept-policies" class="btn">Aceptar</button>
+                    <a href="politicas.html" class="btn btn-secondary">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio-modal" class="modal">
+                <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modal-img" src="" alt="Proyecto ampliado" loading="lazy">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Rocket Icon -->
+    <div class="rocket-icon">
+        <img src="Image/cohete.png" alt="Mini-juego">
+    </div>
+
+    <!-- Mini-Game Modal -->
+    <div id="game-modal" class="game-modal" style="display: none;">
+        <div class="game-modal-content">
+            <span class="game-close-button">&times;</span>
+            <div id="start-menu">
+                <h2 class="game-title">FullMetal</h2>
+                <p class="ship-select-title">Selecciona tu nave</p>
+                <div id="ship-selection" class="ship-selection-container">
+                    <img src="FullMetal/Pilotos/Piloto%201.png" class="ship-option selected" data-ship="player1" loading="lazy">
+                    <img src="FullMetal/Pilotos/Piloto%202.png" class="ship-option" data-ship="player2" loading="lazy">
+                    <img src="FullMetal/Pilotos/Piloto%203.png" class="ship-option" data-ship="player3" loading="lazy">
+                    <img src="FullMetal/Pilotos/Piloto%204.png" class="ship-option" data-ship="player4" loading="lazy">
+                </div>
+                <p id="loading-message">Cargando recursos...</p>
+                <button id="play-button" class="play-btn" disabled>PLAY</button>
+            </div>
+            <canvas id="gameCanvas" width="1138" height="604" style="display: none;"></canvas>
+            <div id="game-over-menu" style="display: none;">
+                <h2 class="game-title">FIN DEL JUEGO</h2>
+                <button id="restart-button" class="play-btn">REINICIAR</button>
+            </div>
+            <div id="game-won-menu" style="display: none;">
+                <h2 class="game-title">¡GANASTE!</h2>
+                <button id="next-level-button" class="play-btn">SIGUIENTE NIVEL</button>
+            </div>
+            <div class="mobile-controls-container" style="display: none;">
+                <div class="d-pad-container">
+                    <button id="up-btn" class="d-pad-btn">▲</button>
+                    <button id="left-btn" class="d-pad-btn">◀</button>
+                    <button id="down-btn" class="d-pad-btn">▼</button>
+                    <button id="right-btn" class="d-pad-btn">▶</button>
+                </div>
+                <div class="shoot-button-container">
+                    <button id="shoot-btn" class="control-btn">💥</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-menu" src="FullMetal/Material/musica_menu.mp3" loop preload="auto"></audio>
+    <audio id="audio-bg" loop preload="none"></audio>
+    <audio id="audio-shoot" src="FullMetal/Material/disparo.mp3" preload="auto"></audio>
+    <audio id="audio-explosion" src="FullMetal/Material/explosion.mp3" preload="auto"></audio>
+
+    <script src="script.min.js" defer></script>
+    <script src="minigame/background.js"></script>
+    <script src="minigame/game.js"></script>
+    <script>
+    // Contador animado para cifras de impacto
+    (function(){
+        function animateNumber(el, target, prefix, suffix){
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const pad = parseInt(el.dataset.pad || '0', 10) || 0;
+            const padNumber = (n, p) => p > 0 ? String(n).padStart(p, '0') : String(n);
+            if(prefersReduced){ el.textContent = (prefix||'') + padNumber(target, pad) + (suffix||''); return; }
+            const duration = 1400;
+            let startTime = null;
+            function step(ts){
+                if(!startTime) startTime = ts;
+                const progress = Math.min((ts - startTime) / duration, 1);
+                const value = Math.floor(progress * target);
+                el.textContent = (prefix||'') + padNumber(value, pad) + (suffix||'');
+                if(progress < 1) requestAnimationFrame(step);
+                else el.textContent = (prefix||'') + padNumber(target, pad) + (suffix||'');
+            }
+            requestAnimationFrame(step);
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            const elems = document.querySelectorAll('.stat-number');
+            const padNumber = (n, p) => p > 0 ? String(n).padStart(p, '0') : String(n);
+            elems.forEach(e => {
+                const pad = parseInt(e.dataset.pad || '0', 10) || 0;
+                const prefix = e.dataset.prefix || '';
+                const suffix = e.dataset.suffix || '';
+                e.textContent = prefix + padNumber(0, pad) + suffix;
+            });
+
+                if('IntersectionObserver' in window){
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting){
+                            const el = entry.target;
+                            const target = parseInt(el.dataset.target || '0', 10);
+                            const prefix = el.dataset.prefix || '';
+                            const suffix = el.dataset.suffix || '';
+                            animateNumber(el, target, prefix, suffix);
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                elems.forEach(el => {
+                    // Si ya está visible en pantalla, iniciar animación inmediatamente
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top >= 0 && rect.top < window.innerHeight) {
+                        const target = parseInt(el.dataset.target || '0', 10);
+                        const prefix = el.dataset.prefix || '';
+                        const suffix = el.dataset.suffix || '';
+                        animateNumber(el, target, prefix, suffix);
+                    } else {
+                        io.observe(el);
+                    }
+                });
+            } else {
+                elems.forEach(el => {
+                    const target = parseInt(el.dataset.target || '0', 10);
+                    const prefix = el.dataset.prefix || '';
+                    const suffix = el.dataset.suffix || '';
+                    animateNumber(el, target, prefix, suffix);
+                });
+            }
+        });
+    })();
+    </script>
+    <script>
+    (function(){
+        document.addEventListener('DOMContentLoaded', function(){
+            const form = document.getElementById('contact-form-main');
+            const statusEl = document.getElementById('contact-status');
+            if(!form || !statusEl) return;
+
+            form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.textContent : '';
+                if(submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
+
+                statusEl.hidden = false;
+                statusEl.textContent = 'Enviando tu idea al cuartel general…';
+
+                try {
+                    const fd = new FormData(form);
+                    // Enviar como POST a Getform
+                    const res = await fetch(form.action, { method: 'POST', body: fd, mode: 'cors' });
+                    if(res.ok){
+                        // Mensaje con personalidad solicitado
+                        statusEl.innerHTML = '¡Recibido! El equipo de <strong>PRØYET_RED</strong> está analizando tu idea. Te escribiremos en menos de <strong>24 horas</strong>.';
+                        form.reset();
+                    } else {
+                        statusEl.textContent = '¡Vaya! Hubo un problema al enviar. Puedes escribirnos directamente a nerael.m@gmail.com';
+                    }
+                } catch(err){
+                    statusEl.textContent = 'Error de red. Intenta de nuevo en unos minutos o escríbenos a nerael.m@gmail.com';
+                } finally {
+                    if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+                }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

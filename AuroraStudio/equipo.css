@@ -1,0 +1,353 @@
+/* --- Hero Section for Team Page --- */
+.hero-equipo {
+    height: 50vh;
+    background-image: linear-gradient(rgba(13, 13, 13, 0.7), var(--primary-color)), url('Image/Visual 4.jpg');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-equipo h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-equipo p {
+    font-size: 1.2rem;
+    color: var(--text-color-darker);
+    margin-top: 10px;
+}
+
+/* --- Team Section --- */
+.team-section {
+    padding: 120px 0 80px; /* más espacio superior para separar del título */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Further reduced width */
+    gap: 25px; /* Further reduced gap */
+}
+
+/* Overlay sutil detrás de las tarjetas para mejorar contraste con fondo dinámico */
+.team-grid {
+    position: relative;
+}
+.team-grid::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    top: -8px;
+    bottom: -8px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.42), rgba(0,0,0,0.26));
+    border-radius: 14px;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(8px);
+    mix-blend-mode: normal;
+}
+
+.team-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* sitúa la tarjeta por encima del overlay */
+    z-index: 2;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(147, 112, 219, 0.3);
+}
+
+.team-card-img {
+    width: 100%;
+    height: 250px; /* Further reduced height */
+    overflow: hidden;
+    position: relative;
+}
+
+.team-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Unified monochrome + purple tint overlay for team images */
+.team-card[data-photo="mono-purple"] .team-card-img img {
+    filter: grayscale(100%) contrast(1.35) brightness(0.95) saturate(0.75);
+    transition: filter 420ms ease, transform 420ms ease;
+}
+.team-card[data-photo="mono-purple"] .team-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(147,112,219,0.12), rgba(103,58,183,0.10));
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 320ms ease;
+}
+.team-card[data-photo="mono-purple"] .team-card-img img {
+    position: relative;
+    z-index: 0;
+}
+
+/* Slight stronger tint/contrast on hover or when flipped to emphasize cohesion */
+.team-card[data-photo="mono-purple"]:hover .team-card-img::after,
+.team-card[data-photo="mono-purple"].flipped .team-card-img::after {
+    opacity: 1;
+}
+
+/* Ghost/fantasmita effect for a single portrait */
+@keyframes float-ghost {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+.team-card[data-ghost="true"] .team-card-img img {
+    opacity: 0.55;
+    filter: grayscale(100%) contrast(1.5) brightness(1.08) blur(0.6px);
+    transform-origin: center;
+    animation: float-ghost 5.6s ease-in-out infinite;
+    transition: opacity 360ms ease, filter 360ms ease, transform 360ms ease;
+}
+.team-card[data-ghost="true"] .team-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: radial-gradient(ellipse at 50% 30%, rgba(147,112,219,0.18), rgba(103,58,183,0.06));
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 2;
+    filter: blur(10px) saturate(1.2);
+    opacity: 0.9;
+}
+.team-card[data-ghost="true"] .card-front { background: transparent; }
+
+/* stronger ghost glow when flipped or hovered */
+.team-card[data-ghost="true"].flipped .team-card-img img,
+.team-card[data-ghost="true"]:hover .team-card-img img {
+    opacity: 0.75;
+    filter: grayscale(100%) contrast(1.6) brightness(1.12) blur(0.4px);
+}
+
+.team-card:hover .team-card-img img {
+    transform: scale(1.05);
+}
+
+.team-card-info {
+    padding: 20px 15px; /* Further reduced padding */
+}
+
+.team-card-info h3 {
+    font-size: 1.2rem; /* Further reduced font size */
+    color: white;
+    margin-bottom: 8px;
+}
+
+.team-card-info .role {
+    font-size: 0.8rem; /* Further reduced font size */
+    color: #D8B4FF; /* aumentado brillo púrpura para mejor legibilidad */
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.team-card-info .bio {
+    font-size: 0.8rem; /* Further reduced font size */
+    color: var(--text-color-darker);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.social-links-team {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links-team a img {
+    width: 18px; /* Further reduced icon size */
+    height: 18px; /* Further reduced icon size */
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-links-team a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Professional icons (LinkedIn / GitHub) - hidden until hover */
+.social-prof {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 8px;
+}
+.social-prof a {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    color: rgba(255,255,255,0.9);
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease, box-shadow 260ms ease;
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+    pointer-events: none;
+}
+.social-prof a svg { width: 18px; height: 18px; }
+
+.team-card:hover .social-prof a {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(147,112,219,0.25), 0 0 40px rgba(147,112,219,0.12) inset;
+    color: #F8F4FF; /* icon color on reveal */
+}
+.team-card:hover .social-prof a:hover {
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 16px 44px rgba(147,112,219,0.32), 0 0 60px rgba(147,112,219,0.18) inset;
+}
+
+/* Reveal on scroll: base hidden state and visible state */
+.team-card.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 480ms cubic-bezier(.2,.85,.35,1), transform 480ms cubic-bezier(.2,.85,.35,1);
+    will-change: opacity, transform;
+}
+.team-card.reveal.fade-in-up { /* explicit variant if used in markup */
+    transform: translateY(18px);
+}
+.team-card.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+
+/* role-social (minimal icons under role) */
+.role-social { display:flex; gap:10px; justify-content:center; margin-top:8px; }
+.role-social-link { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:6px; color:rgba(255,255,255,0.75); background: rgba(255,255,255,0.02); transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease; }
+.role-social-link svg { width:16px; height:16px; display:block; }
+.role-social-link:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(3,218,197,0.08); color:#A6FFF0; }
+.role-social-link[aria-label="LinkedIn"]:hover { box-shadow: 0 12px 36px rgba(147,112,219,0.10); }
+.role-social-link[aria-label="Instagram"]:hover { box-shadow: 0 12px 36px rgba(255,140,170,0.08); }
+
+@media (max-width:520px){ .role-social { gap:8px; } .role-social-link{ width:26px; height:26px; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; transform: none; opacity: 1; }
+}
+
+/* Flip card / back face */
+.team-card {
+    perspective: 1200px;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 640ms cubic-bezier(.2,.9,.2,1);
+}
+.team-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+.card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(2,6,23,0.9), rgba(6,10,26,0.85));
+    color: #EAF6FF;
+    transform: rotateY(180deg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+.card-back h4 { margin: 0 0 10px; color: #9BE7FF }
+.tech-list { display:flex; gap:8px; flex-wrap:wrap; justify-content:center }
+.tech-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 10px;
+    font-size:0.78rem;
+    border-radius:999px;
+    background: linear-gradient(180deg, rgba(2,18,26,0.26), rgba(3,22,34,0.18));
+    color: #DFFCF3;
+    box-shadow: 0 6px 18px rgba(3,218,197,0.06);
+    border: 1px solid rgba(63, 236, 213, 0.06);
+    /* ghost icon styling */
+    .social-prof { display: none !important; }
+
+    /* Ghost presentation (used as profile image) */
+    .team-card[data-ghost="true"] .team-card-img { display:flex; align-items:center; justify-content:center; }
+    .team-card[data-ghost="true"] .team-card-img .ghost-emoji {
+        width: 140px;
+        height: 140px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        opacity: 0.82;
+        transition: opacity 320ms ease, transform 420ms ease, filter 420ms ease;
+        animation: float-ghost 6.4s ease-in-out infinite;
+        filter: drop-shadow(0 18px 40px rgba(147,112,219,0.08));
+    }
+    .team-card[data-ghost="true"] .team-card-img .ghost-emoji svg { width: 88%; height: 88%; display:block; }
+
+    @media (max-width:720px){
+        .team-card[data-ghost="true"] .team-card-img .ghost-emoji { width: 110px; height:110px; }
+    }
+    transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+.tech-icon { width:20px; height:20px; flex:0 0 20px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background: linear-gradient(180deg,#06e6cf,#00c3a7); color:#042425; font-weight:700; font-size:0.85rem; box-shadow: 0 6px 18px rgba(3,218,197,0.08); }
+.tech-label { color: #DFFCF3; white-space:nowrap }
+.tech-badge:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(3,218,197,0.14), 0 0 28px rgba(3,218,197,0.06) inset; }
+.team-card.flipped .tech-badge { box-shadow: 0 18px 60px rgba(3,218,197,0.16), 0 0 36px rgba(3,218,197,0.10) inset; transform: translateY(-2px); }
+.bio-toggle {
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #DDEFF0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.bio-toggle:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+.bio-close {
+    margin-top: 14px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #DDEFF0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width:720px){
+    .card-back { padding: 16px; }
+}
